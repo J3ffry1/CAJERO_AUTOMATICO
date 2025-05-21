@@ -122,9 +122,6 @@ public class CajeroAutomatico {
         } while (opcion != 4);
     }
 
-
-
-
 static void actualizarSaldo(String usuario, String pass, double nuevoSaldo) {
     List<String> lineasActualizadas = new ArrayList<>();
     boolean actualizado = false;
@@ -141,7 +138,7 @@ static void actualizarSaldo(String usuario, String pass, double nuevoSaldo) {
             }
         }
     } catch (IOException e) {
-        System.out.println("⚠️ Error al leer el archivo: " + e.getMessage());
+        System.out.println("Error al leer el archivo: " + e.getMessage());
         return;
     }
 
@@ -151,20 +148,15 @@ static void actualizarSaldo(String usuario, String pass, double nuevoSaldo) {
             escritor.write(nuevaLinea);
             escritor.newLine();
         }
-        System.out.println("✅ Saldo actualizado correctamente.");
+        System.out.println(" Saldo actualizado correctamente.");
     } catch (IOException e) {
-        System.out.println("⚠️ Error al escribir en el archivo: " + e.getMessage());
+        System.out.println(" Error al escribir en el archivo: " + e.getMessage());
     }
 
     if (!actualizado) {
-        System.out.println("⚠️ Usuario no encontrado para actualizar.");
+        System.out.println("Usuario no encontrado para actualizar.");
     }
 }
-
-
-
-
-
     static int leerEntero() {
         while (true) {
             try {
